@@ -191,5 +191,6 @@ const ProductEditScreen = ({ match, history }) => {
     </>
   );
 };
+// Prepare
 
 export default ProductEditScreen;
