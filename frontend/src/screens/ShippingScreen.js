@@ -48,10 +48,10 @@ const ShippingScreen = ({ history }) => {
         </Form.Group>
 
         <Form.Group controlId="postalCode">
-          <Form.Label>Postal Code</Form.Label>
+          <Form.Label>Phone Number</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter postal code"
+            placeholder="Enter your phone number"
             value={postalCode}
             required
             onChange={(e) => setPostalCode(e.target.value)}
