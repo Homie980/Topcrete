@@ -153,30 +153,17 @@ const OrderScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <h2>Order Summary</h2>
               </ListGroup.Item>
-              <ListGroup.Item>
+              {order.orderItems.map(item => (
+                <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
-                  <Col>{order.itemsPrice} EGP</Col>
+                  <Col>Item</Col>
+                  <Col>{item.name}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Shipping</Col>
-                  <Col>{order.shippingPrice} EGP</Col>
-                </Row>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Tax</Col>
-                  <Col>{order.taxPrice} EGP</Col>
-                </Row>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Total</Col>
-                  <Col>{order.totalPrice} EGP</Col>
-                </Row>
-              </ListGroup.Item>
+              ))}
+              
+              
+              
               {!order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}

@@ -96,9 +96,7 @@ const PlaceOrderScreen = ({ history }) => {
                             {item.name}
                           </Link>
                         </Col>
-                        <Col md={4}>
-                          {item.qty} x {item.price} EGP = {item.qty * item.price} EGP
-                        </Col>
+                        
                       </Row>
                     </ListGroup.Item>
                   ))}
@@ -113,30 +111,15 @@ const PlaceOrderScreen = ({ history }) => {
               <ListGroup.Item>
                 <h2>Order Summary</h2>
               </ListGroup.Item>
-              <ListGroup.Item>
+              {cart.cartItems.map(item => (
+                <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
-                  <Col>{cart.itemsPrice} EGP</Col>
+                  <Col>Item</Col>
+                  <Col>{item.name}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Shipping</Col>
-                  <Col>{cart.shippingPrice} EGP</Col>
-                </Row>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Tax</Col>
-                  <Col>{cart.taxPrice} EGP</Col>
-                </Row>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Total</Col>
-                  <Col>{cart.totalPrice} EGP</Col>
-                </Row>
-              </ListGroup.Item>
+              ))}
+              
               <ListGroup.Item>
                 {error && <Message variant='danger'>{error}</Message>}
               </ListGroup.Item>
