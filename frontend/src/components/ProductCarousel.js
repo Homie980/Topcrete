@@ -3,7 +3,7 @@ import { Carousel, Image } from 'react-bootstrap';
 
 const ProductCarousel = () => {
   return (
-    <Carousel pause="hover" className="bg-dark">
+    <Carousel pause="hover" className="bg-light">
       <Carousel.Item>
         <Image src="https://i.ibb.co/GdVp5Ng/7.jpg" alt="companylogo" fluid />
       </Carousel.Item>
